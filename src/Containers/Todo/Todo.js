@@ -34,12 +34,7 @@ export default class Todo extends Component {
   deleteTodo = (index) => {
     let data = [...this.state.todos]
     data.splice(index, 1)
-    let oldDeleted = [...this.state.deleted]
-    let deleted = data.splice(index, 1)
     this.setState({ todos: data })
-    this.setState({ deleted })
-    this.setState({ typing: "" })
-    console.log(this.state.deleted)
   }
 
   render() {
