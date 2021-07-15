@@ -1,6 +1,6 @@
 .list-group-item{
     position: relative;
-    margin: 5px;
+    margin: 5px 0;
 }
 .list-group-item button {
     position: absolute;

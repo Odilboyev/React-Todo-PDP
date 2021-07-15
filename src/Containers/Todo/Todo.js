@@ -9,7 +9,11 @@ import './Todo.css';
 export default class Todo extends Component {
   constructor(props) {
     super(props);
-    this.state = { todos: this.props.todos, typing: 'Type your task' }
+    this.state = {
+      todos: this.props.todos,
+      typing: 'Type your task',
+      deleted: []
+    }
   }
 
   setValues = (e) => {
@@ -30,8 +34,12 @@ export default class Todo extends Component {
   deleteTodo = (index) => {
     let data = [...this.state.todos]
     data.splice(index, 1)
+    let oldDeleted = [...this.state.deleted]
+    let deleted = data.splice(index, 1)
     this.setState({ todos: data })
+    this.setState({ deleted })
     this.setState({ typing: "" })
+    console.log(this.state.deleted)
   }
 
   render() {
